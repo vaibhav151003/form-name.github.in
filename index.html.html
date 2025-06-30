@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Name Submit Page</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      border: 2px solid pink;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 200px;
+      border: 2px solid pink;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      margin-top: 15px;
+      background-color: pink;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Enter Your Name</h2>
+    <form action="heart.html" method="GET">
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

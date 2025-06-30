@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You're Beautiful</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .heart {
+      width: 150px;
+      height: 135px;
+      background-color: #C71585; /* Dark pink */
+      position: relative;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 150px;
+      height: 135px;
+      background-color: #C71585;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 75px;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+    }
+
+    h1 {
+      color: #FF69B4; /* Light pink text */
+      font-size: 36px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <h1 id="message"></h1>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    if (name) {
+      document.getElementById("message").textContent = name + ", you are very beautiful 💖";
+    } else {
+      document.getElementById("message").textContent = "You are very beautiful 💖";
+    }
+  </script>
+</body>
+</html>
